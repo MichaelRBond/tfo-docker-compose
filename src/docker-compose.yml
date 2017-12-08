@@ -7,3 +7,5 @@ services:
     volumes:
       - /mnt/tfo-volume-01/sites/:/usr/local/apache2/sites/
       - /mnt/tfo-volume-01/tfo-docker-compose/src/dockerfiles/httpd/virtual-hosts/:/usr/local/apache2/virtual-hosts/
+      - /mnt/tfo-volume-01/logs/:/usr/local/apache2/
+      
