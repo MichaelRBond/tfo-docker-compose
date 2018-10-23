@@ -13,10 +13,10 @@ services:
   grapevine-mysql:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: grapevine_rss
-      MYSQL_USER: grapevine
-      MYSQL_PASSWORD: ${DB_PASSWD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=grapevine_rss
+      - MYSQL_USER=grapevine
+      - MYSQL_PASSWORD=${DB_PASSWD}
     networks:
       - private
     ports:
@@ -32,6 +32,9 @@ services:
       - private
     ports:
       - 3000:3001
+    environment:
+      - CONFIG_ENV="prod"
+      - DB_PASSWORD=${DB_PASSWD}
 networks:
   public:
   private:
