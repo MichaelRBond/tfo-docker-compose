@@ -12,17 +12,17 @@ services:
       - /mnt/tfo-volume-01/logs/:/usr/local/apache2/logs/
   grapevine-mysql:
     image: mysql:5.7
-      environment:
-        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-        MYSQL_DATABASE: grapevine_rss
-        MYSQL_USER: grapevine
-        MYSQL_PASSWORD: ${DB_PASSWD}
-      networks:
-        - private
-      ports:
-        - 3306:3306
-      volumes:
-        - mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: grapevine_rss
+      MYSQL_USER: grapevine
+      MYSQL_PASSWORD: ${DB_PASSWD}
+    networks:
+      - private
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql
   grapevine-aggregator:
     image: mrbond/grapevine-rss-aggregator
     depends_on:
