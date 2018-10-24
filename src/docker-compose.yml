@@ -35,7 +35,7 @@ services:
     environment:
       - CONFIG_ENV="prod"
       - DB_PASSWORD=${DB_PASSWD}
-    command: ["run", "start"]
+    entrypoint: yarn run start
 networks:
   public:
   private:
