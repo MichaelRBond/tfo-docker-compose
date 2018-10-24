@@ -33,7 +33,7 @@ services:
     ports:
       - 3000:3001
     environment:
-      - CONFIG_ENV="prod"
+      - CONFIG_ENV=prod
       - DB_PASSWORD=${DB_PASSWD}
     entrypoint: yarn run start
 networks:
