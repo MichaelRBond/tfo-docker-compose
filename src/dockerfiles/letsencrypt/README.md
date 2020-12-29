@@ -1,6 +1,7 @@
 # Using Lets Encrypt
 
 ```bash
+docker build -t lets-encrypt-apache .
 mkdir -p /mnt/tfo-volume-01/tfo-docker-compose/src/dockerfiles/letsencrypt/etc
 
 export SERVER_NAME=xxx
