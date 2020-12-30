@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   web:
-    image: mrbond/tfo-httpd:0.3
+    image: mrbond/tfo-httpd:0.7
     networks:
       - public
     ports:
