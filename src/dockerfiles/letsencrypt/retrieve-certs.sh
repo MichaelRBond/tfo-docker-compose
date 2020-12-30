@@ -10,7 +10,7 @@ mkdir -p $LETS_ENCRYPT_DIR/etc
 
 # "whiteeaglemartialarts.com"
 DOMAINS=("morgantown.ninja" "the-forgotten.org" "baiyingpai.com" "emmasbond.me" "fairmontflyers.org" "kathnmike.us")
-SUB_DOMAINS=("grapevine.the-forgotten.org")
+SUB_DOMAINS=("grapevine.the-forgotten.org" "api.grapevine.the-forgotten.org")
 
 for DOMAIN in "${DOMAINS[@]}"; do
   export SERVER_NAME=$DOMAIN
