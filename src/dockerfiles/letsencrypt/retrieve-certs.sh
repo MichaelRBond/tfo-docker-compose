@@ -8,7 +8,8 @@ cd $LETS_ENCRYPT_DIR
 docker build -t lets-encrypt-apache .
 mkdir -p $LETS_ENCRYPT_DIR/etc
 
-DOMAINS=("morgantown.ninja" "the-forgotten.org" "baiyingpai.com" "emmasbond.me" "fairmontflyers.org" "kathnmike.us" "whiteeaglemartialarts.com")
+# "whiteeaglemartialarts.com"
+DOMAINS=("morgantown.ninja" "the-forgotten.org" "baiyingpai.com" "emmasbond.me" "fairmontflyers.org" "kathnmike.us")
 SUB_DOMAINS=("grapevine.the-forgotten.org")
 
 for DOMAIN in "${DOMAINS[@]}"; do
