@@ -4,7 +4,7 @@ set -e
 
 LETS_ENCRYPT_DIR=/mnt/tfo-volume-01/tfo-docker-compose/src/dockerfiles/letsencrypt
 
-cd
+cd $LETS_ENCRYPT_DIR
 docker build -t lets-encrypt-apache .
 mkdir -p $LETS_ENCRYPT_DIR/etc
 
@@ -25,6 +25,7 @@ for DOMAIN in "${DOMAINS[@]}"; do
   certonly --webroot \
   --email mbond@morgantown.ninja --agree-tos --no-eff-email \
   --webroot-path=/data/letsencrypt \
+  --force-renewal \
   -d $SERVER_NAME -d www.${SERVER_NAME}
 
   docker-compose down
