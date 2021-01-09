@@ -2,6 +2,7 @@
 
 set -e
 
+source /root/DOCKER_ENV
 MYSQL_BACKUP_DIR=/mnt/tfo-volume-01/backups/mysql
 mkdir -p "${MYSQL_BACKUP_DIR}"
 
