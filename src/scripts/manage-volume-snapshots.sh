@@ -2,6 +2,8 @@
 
 set -e
 
+source /mnt/tfo-volume-01/ENV/DOCKER_ENV
+
 TWO_WEEKS_IN_SEC=1209600
 NOW=$(date +%s)
 
