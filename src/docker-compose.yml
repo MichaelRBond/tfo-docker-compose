@@ -14,38 +14,7 @@ services:
       - /mnt/tfo-volume-01/tfo-docker-compose/src/dockerfiles/letsencrypt/etc/live/:/usr/local/apache2/certs/
       - /mnt/tfo-volume-01/tfo-docker-compose/src/dockerfiles/letsencrypt/etc/archive/:/usr/local/apache2/archive/
     restart: always
-  grapevine-mysql:
-    image: mysql:5.7
-    environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=grapevine_rss
-      - MYSQL_USER=grapevine
-      - MYSQL_PASSWORD=${DB_PASSWD}
-    networks:
-      - private
-    ports:
-      - 3306:3306
-    volumes:
-      - mysql:/var/lib/mysql
-    restart: always
-  grapevine-aggregator:
-    image: mrbond/grapevine-rss-aggregator
-    depends_on:
-      - grapevine-mysql
-    networks:
-      - public
-      - private
-    ports:
-      - 3001:3000
-    environment:
-      - CONFIG_ENV=prod
-      - DB_PASSWD=${DB_PASSWD}
-      - DB_HOST=${DB_HOST}
-    entrypoint: yarn run start
-    restart: always
 networks:
   public:
   private:
     internal: true
-volumes:
-  mysql: {}
